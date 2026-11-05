@@ -1,0 +1,16 @@
+Release notes
+-------------
+
+Date          Version   Comment
+2026/11/05    1.1.0     Add: event observers on user_created/user_updated keep the
+                        noemail flag in sync with the random-...@vds.de convention
+                        (flag set on match, reset to 0 when the address changes).
+                        Fix: migration now also runs as an upgrade step, so sites
+                        that already had the plugin installed get flagged; the
+                        1.0.0 install hook only ran on first install. Fix: load
+                        user/profile/lib.php before using PROFILE_VISIBLE_PRIVATE.
+                        Move migration logic into local_vdsnoemail\local\flagger.
+2026/04/29    1.0.0     Initial release. One-shot migration from the
+                        random-...@vds.de email convention to the generic
+                        noemail custom user profile field used by
+                        local_recertify 1.2.0.
